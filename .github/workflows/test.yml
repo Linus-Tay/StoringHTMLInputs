@@ -4,15 +4,15 @@ on:
   push:
     branches: [master, main]
 
-
-outputs:
-  random-number:
-    description: "Random number"
-    value: ${{ steps.random-number-generator.outputs.random-id }}
-
-run-tests:
-  using: "composite"
-  steps:
-    - id: random-number-generator
-      run: echo "::set-output name=random-id::$(echo $RANDOM)"
-      shell: bash
+jobs:
+  outputs:
+    random-number:
+      description: "Random number"
+      value: ${{ steps.random-number-generator.outputs.random-id }}
+  
+  run-tests:
+    using: "composite"
+    steps:
+      - id: random-number-generator
+        run: echo "::set-output name=random-id::$(echo $RANDOM)"
+        shell: bash
