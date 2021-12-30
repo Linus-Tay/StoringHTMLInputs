@@ -7,7 +7,7 @@ on:
 
 inputs:
   destinationFolder: test
-    description: "The folder to copy the files to"
+    description: 'The folder to copy the files to'
     required: true
     default: '~'
 
