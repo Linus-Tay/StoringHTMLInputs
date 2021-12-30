@@ -7,11 +7,10 @@ on:
 jobs:
   run-tests:
     name: Run Tests
-    runs-on: ubuntu-latest
+    using: "composite"
 
     steps:
       - name: Test Random Generator
-        uses: "composite"
         outputs:
           random-number:
             description: "Random number"
