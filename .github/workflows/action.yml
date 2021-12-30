@@ -1,9 +1,9 @@
-name: Testing HTML Stuff
+name: 'Testing HTML Stuff'
+description: 'Pretends to copy some files and return the number of files'
 
 on:
   push:
     branches: [master, main]
-
 
 inputs:
   destinationFolder: # path
@@ -16,7 +16,7 @@ outputs:
     description: "Random number"
     value: ${{ steps.random-number-generator.outputs.filesNo }}
 
-jobs:
+runs:
   using: "composite"
   steps:
     - id: random-number-generator
