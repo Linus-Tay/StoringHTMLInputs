@@ -5,14 +5,20 @@ on:
     branches: [master, main]
 
 
+inputs:
+  destinationFolder: test
+    description: "The folder to copy the files to"
+    require: true
+    default: '~'
+
 outputs:
   random-number:
     description: "Random number"
-    value: ${{ steps.random-number-generator.outputs.random-id }}
+    value: ${{ steps.random-number-generator.outputs.filesNo }}
 
 runs:
   using: "composite"
   steps:
     - id: random-number-generator
-      run: echo "::set-output name=random-id::$(echo $RANDOM)"
+      run: echo "::set-output name=filesNo::$(echo $RANDOM)"
       shell: bash
