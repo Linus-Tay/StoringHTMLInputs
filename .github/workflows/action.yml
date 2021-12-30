@@ -16,7 +16,7 @@ outputs:
     description: "Random number"
     value: ${{ steps.random-number-generator.outputs.filesNo }}
 
-runs:
+jobs:
   using: "composite"
   steps:
     - id: random-number-generator
