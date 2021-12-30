@@ -6,10 +6,10 @@ on:
 
 
 inputs:
-  destinationFolder: test
+  destinationFolder: # path
     description: 'The folder to copy the files to'
     required: true
-    default: '~'
+    default: 'test'
 
 outputs:
   random-number:
