@@ -11,6 +11,7 @@ jobs:
 
     steps:
       - name: Test Random Generator
+        using: "composite"
         outputs:
           random-number:
             description: "Random number"
