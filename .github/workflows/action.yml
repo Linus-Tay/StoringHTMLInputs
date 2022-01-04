@@ -20,5 +20,8 @@ jobs:
       - name: Make docker-build.sh Executable
         run: chmod +x ./docker-build.sh
 
-      - name: Create docker image
-        run: ./docker-build.sh "${GITHUB_REF#refs/heads/}.${GITHUB_SHA}"
+      - name: Create file with information
+        uses: "finnp/create-file-action@master"
+            env:
+              FILE_NAME: "test.txt"
+              FILE_DATA: "${GITHUB_SHA}"
