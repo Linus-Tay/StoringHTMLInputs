@@ -12,12 +12,11 @@ jobs:
     steps:
       - name: Checkout Current Repository
         uses: actions/checkout@v2
-     
-      - name: List Directory
+
+      - name: Create file with information
+        run: |
+          echo "${GITHUB_SHA}" > test.txt
+
+      - name: Show file content
         run: |
           ls
-
-      - uses: "finnp/create-file-action@master"
-            env:
-              FILE_NAME: "test/fileName.txt"
-              FILE_DATA: "file content"
