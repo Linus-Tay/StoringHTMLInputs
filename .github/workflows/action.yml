@@ -1,0 +1,14 @@
+name: Test
+
+on:
+  push:
+    branches: [master, main]
+
+jobs:
+  run-tests:
+    name: Run Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Create docker image
+        run: ./docker-build.sh "${GITHUB_REF#refs/heads/}.${GITHUB_SHA}"
