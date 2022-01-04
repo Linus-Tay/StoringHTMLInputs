@@ -13,6 +13,10 @@ jobs:
       - name: Checkout Current Repository
         uses: actions/checkout@v2
 
+      - name: List Directory
+        run: |
+          ls
+
       - name: Create file with information
         run: |
           echo "${GITHUB_REPOSITORY}" > test.txt
