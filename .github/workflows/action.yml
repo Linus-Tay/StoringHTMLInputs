@@ -17,9 +17,6 @@ jobs:
         run: |
           ls
 
-      - name: Make docker-build.sh Executable
-        run: chmod +x ./docker-build.sh
-
       - name: Create file with information
         uses: "finnp/create-file-action@master"
             env:
