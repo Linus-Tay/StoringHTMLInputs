@@ -19,4 +19,4 @@ jobs:
 
       - name: Show file content
         run: |
-          ls
+          cat test.txt
