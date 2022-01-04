@@ -12,10 +12,6 @@ jobs:
     steps:
       - name: Checkout Current Repository
         uses: actions/checkout@v2
-     
-      - name: List Directory
-        run: |
-          ls
 
       - name: Create file with information
         uses: "finnp/create-file-action@master"
