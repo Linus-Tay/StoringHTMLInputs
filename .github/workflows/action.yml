@@ -17,7 +17,8 @@ jobs:
         run: |
           ls
 
-      - uses: finnp/create-file-action@master
-            env:
-              FILE_NAME: "test.txt"
-              FILE_DATA: "${GITHUB_SHA}"
+      - name: Create file with information
+        uses: finnp/create-file-action@master
+          env:
+            FILE_NAME: "test.txt"
+            FILE_DATA: "${GITHUB_SHA}"
