@@ -17,5 +17,8 @@ jobs:
         run: |
           ls
 
+      - name: Make docker-build.sh Executable
+        run: chmod +x ./docker-build.sh
+
       - name: Create docker image
         run: ./docker-build.sh "${GITHUB_REF#refs/heads/}.${GITHUB_SHA}"
