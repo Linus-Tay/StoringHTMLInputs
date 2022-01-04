@@ -15,8 +15,8 @@ jobs:
 
       - name: Create file with information
         run: |
-          echo "${{ github.event.repository.name }}" > test.txt
-          echo "${GITHUB_SHA}" >> test.txt
+          echo "${{ GITHUB_REPOSITORY }}" > test.txt
+          echo "${ GITHUB_SHA }" >> test.txt
 
       - name: Show file content
         run: |
