@@ -24,7 +24,7 @@ jobs:
           cat test.txt
 
       - name: Test
-        uses: Linus-Tay/store-text-file-in-firebase@v1.3
+        uses: Linus-Tay/store-text-file-in-firebase@v1.4
         with:
           owner: "${GITHUB_ACTOR}"
           repoName: "${GITHUB_EVENT_NAME}"
