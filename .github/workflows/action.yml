@@ -29,6 +29,6 @@ jobs:
       - name: Test
         uses: Linus-Tay/store-text-file-in-firebase@v1.4
         with:
-          owner: ${GITHUB_ACTOR}
+          owner: ${{env.GITHUB_ACTOR}}
           repoName: ${GITHUB_EVENT_NAME}
           fileName: "text.txt"
