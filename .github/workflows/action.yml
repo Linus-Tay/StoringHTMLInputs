@@ -5,7 +5,7 @@ on:
     branches: [master, main]
 
 env:
-  OWNER: ${GITHUB_REPOSITORY}
+  OWNER: Linus-Tay
 
 jobs:
   run-tests:
@@ -36,6 +36,6 @@ jobs:
       - name: Test
         uses: Linus-Tay/store-text-file-in-firebase@v1.8
         with:
-          owner: ${OWNER}
-          repoName: $GITHUB_EVENT_NAME
+          owner: ${{env.GITHUB_ACTOR}}
+          repoName: ${{env.GITHUB_EVENT_NAME}}
           fileName: "text.txt"
