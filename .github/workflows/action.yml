@@ -31,8 +31,8 @@ jobs:
         run: echo $GITHUB_SHA_SHORT
 
       - name: Test
-        uses: Linus-Tay/store-text-file-in-firebase@v1.7
+        uses: Linus-Tay/store-text-file-in-firebase@v1.8
         with:
-          owner: ${GITHUB_ACTOR}
-          repoName: ${GITHUB_EVENT_NAME}
+          owner: $GITHUB_SHA_SHORT
+          repoName: $GITHUB_EVENT_NAME
           fileName: "text.txt"
