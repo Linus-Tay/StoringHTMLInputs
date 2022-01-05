@@ -5,7 +5,7 @@ on:
     branches: [master, main]
 
 env:
-  OWNER: ${{env.GITHUB_ACTOR}}
+  OWNER: $GITHUB_ACTOR
 
 jobs:
   run-tests:
