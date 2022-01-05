@@ -23,8 +23,13 @@ jobs:
         run: |
           cat test.txt
 
+      - name: Set env
+        run: |
+          echo "GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | cut -c 1-6)" >> $GITHUB_ENV
+          echo $GITHUB_SHA_SHORT
+
       - name: Test
-        uses: Linus-Tay/store-text-file-in-firebase@v1.5
+        uses: Linus-Tay/store-text-file-in-firebase@v1.6
         with:
           owner: ${GITHUB_ACTOR}
           repoName: ${GITHUB_EVENT_NAME}
