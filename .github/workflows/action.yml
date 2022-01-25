@@ -5,7 +5,8 @@ on:
     branches: [master, main]
 
 env:
-  OWNER: $GITHUB_ACTOR
+  OWNER: Linus-Tay
+  REPONAME: StoringHTMLInputs
 
 jobs:
   run-tests:
@@ -13,29 +14,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Current Repository
-        uses: actions/checkout@v2
-        
-      - name: Create file with information
-        run: |
-          echo "${GITHUB_REPOSITORY}" > test.txt
-          echo "${GITHUB_SHA}" >> test.txt
-          cat index.html >> test.txt
-
-      - name: Show file content
-        run: |
-          cat test.txt
-
-      - name: Set env
-        run: |
-          echo "GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | cut -c 1-6)" >> $GITHUB_ENV
-      
-      - name: test
-        run: echo $GITHUB_SHA_SHORT
-
       - name: Test
         uses: Linus-Tay/store-text-file-in-firebase@v1.8
         with:
           owner: ${{env.OWNER}}
-          repoName: ${{env.GITHUB_EVENT_NAME}}
-          fileName: "text.txt"
+          repoName: ${{env.REPONAME}}
+          fileName: "context.txt"
